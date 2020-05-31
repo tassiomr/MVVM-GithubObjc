@@ -7,11 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Repository.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface GithubService : NSObject
--(NSMutableArray *) getRespositoryWithUsername:(NSString *) username;
+-(void) getRespositoryWithUsername:(NSString *) username completion: (void (^)(NSMutableArray<Repository*> *respositories)) completion;
 @end
 
 NS_ASSUME_NONNULL_END

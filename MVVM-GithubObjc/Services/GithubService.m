@@ -10,8 +10,9 @@
 #import "Repository.h"
 
 @implementation GithubService
-- (NSMutableArray *)getRespositoryWithUsername:(NSString *)username {
-	NSMutableArray<Repository *> *repos = @[];
+
+- (void)getRespositoryWithUsername:(NSString *)username completion:(void (^)(NSMutableArray<Repository *> * _Nonnull))completion {
+	NSMutableArray<Repository *> *repos = [[NSMutableArray alloc] init];
 	NSURLSession *defaultSession = [NSURLSession sessionWithConfiguration:NSURLSessionConfiguration.defaultSessionConfiguration];
 	NSURLSessionDataTask *dataTask;
 	
@@ -32,15 +33,17 @@
 				}
 				
 				for(NSDictionary *repo in dataSerialized) {
-					Repository *repository = [[Repository alloc] initWithRepo:repo[@"id"] name:repo[@"full_names"] privateRepo:repo[@"private"] htmlUrl:repo[@"html_url"] language:repo[@"language"]];
+					Repository *repository = [[Repository alloc] initWithRepo:repo[@"id"] name:repo[@"full_name"] privateRepo:repo[@"private"] htmlUrl:repo[@"html_url"] language:repo[@"language"]];
+					
 					[repos addObject:repository];
 				}
 			}
+			dispatch_async(dispatch_get_main_queue(), ^{
+				completion(repos);
+			});
 		}
 	}];
 	
 	[dataTask resume];
-	
-	return repos;
 }
 @end
