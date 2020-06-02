@@ -16,6 +16,7 @@
 		18A482432483DFDC002F6B25 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A482422483DFDC002F6B25 /* main.m */; };
 		18A482502483E0CE002F6B25 /* Repository.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A4824F2483E0CE002F6B25 /* Repository.m */; };
 		18A482532483E1E5002F6B25 /* GithubService.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A482522483E1E5002F6B25 /* GithubService.m */; };
+		18A4825624840E06002F6B25 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A4825524840E06002F6B25 /* TableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,8 @@
 		18A4824F2483E0CE002F6B25 /* Repository.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Repository.m; sourceTree = "<group>"; };
 		18A482512483E1E5002F6B25 /* GithubService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GithubService.h; sourceTree = "<group>"; };
 		18A482522483E1E5002F6B25 /* GithubService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GithubService.m; sourceTree = "<group>"; };
+		18A4825424840E06002F6B25 /* TableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
+		18A4825524840E06002F6B25 /* TableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +125,8 @@
 			isa = PBXGroup;
 			children = (
 				18A482392483DFDA002F6B25 /* Main.storyboard */,
+				18A4825424840E06002F6B25 /* TableViewCell.h */,
+				18A4825524840E06002F6B25 /* TableViewCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -196,6 +201,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18A4825624840E06002F6B25 /* TableViewCell.m in Sources */,
 				18A482382483DFDA002F6B25 /* MainViewController.m in Sources */,
 				18A482502483E0CE002F6B25 /* Repository.m in Sources */,
 				18A482322483DFDA002F6B25 /* AppDelegate.m in Sources */,

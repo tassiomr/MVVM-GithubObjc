@@ -9,6 +9,7 @@
 #import "MainViewController.h"
 #import "GithubService.h"
 #import "Repository.h"
+#import "TableViewCell.h"
 
 @interface MainViewController ()
 @property (nonnull, nonatomic) GithubService *service;
@@ -24,11 +25,13 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	Repository *repository = self.repositories[indexPath.row];
+
+	TableViewCell *cell =  [tableView dequeueReusableCellWithIdentifier:@"repositoryReuseViewCell" forIndexPath:indexPath];
+
+	cell.uiReponame.text = repository.name;
+	cell.uiRepoUrl.text = repository.htmlUrl;
 	NSLog(@"%@", repository.language);
-
-	UITableViewCell *cell = [[UITableViewCell alloc] init];
-
-	cell.textLabel.text = repository.name;
+	cell.uiImageView.image = [UIImage imageNamed:repository.language];
 
 	return  cell;
 }
